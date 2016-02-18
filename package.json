@@ -1,0 +1,9 @@
+{
+  "name": "emb_semver",
+  "version": "1.2.2",
+  "repo": "tencherry10/embedded_semver",
+  "description": "Simple way to read embedded semver metadata",
+  "keywords": ["semver", "metadata"],
+  "license": "MIT",
+  "install": "make install"
+}
