@@ -7,7 +7,6 @@
 #include <sys/mman.h>
 
 const char  *version_semver = "%%semver%% 0.0.1";
-const char  *semver_atom    = "%%semver%%";
 const int   offset_semver   = 11;
 const int   max_semver_sz   = 256;
 extern int  errno;
@@ -49,6 +48,12 @@ static char * search_semver(const char * fname) {
   char        *ret    = NULL;
   struct stat sb;
   int         fd;
+  char        semver_atom[16] = {0};  
+  
+  // need to this to avoid matching to this semver string
+  strcat(semver_atom, "%%");
+  strcat(semver_atom, "semver");
+  strcat(semver_atom, "%%");
   
   if((fd = open(fname, O_RDONLY)) == -1)
     return ret;
@@ -85,7 +90,7 @@ int main(int argc, char ** argv) {
   
   if((search = search_semver(argv[1])) == NULL) {
     perror("search failed");
-    error("%%semver%% not found");
+    error("semver not found");
   }
   
   printf("%s\n", search);
