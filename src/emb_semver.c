@@ -6,7 +6,7 @@
 #include <sys/stat.h>
 #include <sys/mman.h>
 
-const char  *version_semver = "%%semver%% 0.0.1";
+const char  *version_semver = "%%semver%% 0.0.2";
 const int   offset_semver   = 11;
 const int   max_semver_sz   = 256;
 extern int  errno;
