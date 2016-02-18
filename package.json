@@ -1,6 +1,6 @@
 {
   "name": "emb_semver",
-  "version": "0.1.2",
+  "version": "0.0.2",
   "repo": "tencherry10/embedded_semver",
   "description": "Simple way to read embedded semver metadata",
   "keywords": ["semver", "metadata"],
